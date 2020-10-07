@@ -1,0 +1,160 @@
+/* LAYOUT */
+
+body {
+  margin: 0 auto;
+}
+
+* { 
+  box-sizing: border-box;
+}
+
+
+
+
+// nav {
+//   grid-column: 1 / 4;
+// }
+/* let's try putting a grid on 'body' and positioningeverything ver that *
+
+/* maybe later, first let's do header approach */
+
+/* will need to adjust header /nav stuff to be able to ahve a sticky nav */
+// header {
+//   width: 100%;
+//   display: grid;
+//   grid-template: 1fr 1fr 1fr /  1fr 0.3fr 10%;
+  
+aside.social-links {
+  margin-top: 1em;
+  min-width: 4em;
+  // grid-area: aside;
+  display: grid;
+  grid-template-rows: 3em 3em 3em;
+  place-items: center;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  
+}
+.content-wrap {
+  width: 95%;
+  
+//   display: grid;
+//   grid-template-areas: 
+//       "nav nav nav aside"
+//       "header header header aside"
+//       "main main main aside"
+// }
+header {
+  // grid-area: header;
+  width: 90%;
+}
+
+
+  nav {
+    // grid-area: nav;
+    height: 3em;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    place-items: center;
+    position: sticky;
+    top: 0;
+  }
+
+  
+
+   h1 {
+     grid-column: 1 / 2;
+     grid-row: 2 / 4;
+     margin-left: 1em;
+   }
+ 
+
+
+main {
+  // grid-area: main;
+  display: grid;
+  margin: 1em;
+  
+
+  section.main-info {
+    display: grid;
+    grid-template: 10% 45% 45% / 50% 50%;
+    place-items: center;
+
+    #list-one {
+      grid-row: 2 / 3;
+      grid-column: 2 / 3;
+      
+    }
+    #img-one {
+      grid-row: 2 / 3;
+      grid-column: 1 / 2;
+      // place-self: end;
+      
+    }
+  
+    #list-two {
+       grid-row: 3 / 4;
+       grid-column: 1 / 2;
+     
+    }
+
+    #img-two {
+      grid-row: 3 / 4;
+      grid-column: 2 / 3;
+
+    }
+  }
+
+  section.text {
+      display: grid;
+      justify-items: center;
+      margin: 1em;
+      text-align: justify;
+
+      p {
+        width: 80%;
+      }
+  }
+
+}
+
+}
+
+
+
+
+
+/* thought process: nav - only one row so no need to specify
+I found a best practices guide in smashing magazine that suggested using the above minmax
+pattern with fr to force equal distribution
+*/
+
+
+
+// nav {
+//   display: grid;
+//   grid-template: 1fr 1fr / repeat(5, 1fr) repeat(4, 0.5fr);
+//   place-items: center;
+  
+// }
+
+// .social-links {
+//   width: 95%;
+//   grid-column: -1 / -2;
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+//   // justify-items: center;
+//   // align-items: end; 
+//   place-items: center; /* why doesn't this (and other align attempts) work?"*/
+
+//   a {
+//        padding-top: 10%; /* fix for above problem (align not working) */
+//   }
+// }
+
+
+
+

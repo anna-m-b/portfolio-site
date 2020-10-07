@@ -1,0 +1,84 @@
+/* LAYOUT */
+body {
+  margin: 0 auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* let's try putting a grid on 'body' and positioningeverything ver that *
+
+/* maybe later, first let's do header approach */
+/* will need to adjust header /nav stuff to be able to ahve a sticky nav */
+aside.social-links {
+  margin-top: 1em;
+  min-width: 4em;
+  display: grid;
+  grid-template-rows: 3em 3em 3em;
+  place-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.content-wrap {
+  width: 95%;
+}
+.content-wrap header {
+  width: 90%;
+}
+.content-wrap nav {
+  height: 3em;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  place-items: center;
+  position: sticky;
+  top: 0;
+}
+.content-wrap h1 {
+  grid-column: 1/2;
+  grid-row: 2/4;
+  margin-left: 1em;
+}
+.content-wrap main {
+  display: grid;
+  margin: 1em;
+}
+.content-wrap main section.main-info {
+  display: grid;
+  grid-template: 10% 45% 45%/50% 50%;
+  place-items: center;
+}
+.content-wrap main section.main-info #list-one {
+  grid-row: 2/3;
+  grid-column: 2/3;
+}
+.content-wrap main section.main-info #img-one {
+  grid-row: 2/3;
+  grid-column: 1/2;
+}
+.content-wrap main section.main-info #list-two {
+  grid-row: 3/4;
+  grid-column: 1/2;
+}
+.content-wrap main section.main-info #img-two {
+  grid-row: 3/4;
+  grid-column: 2/3;
+}
+.content-wrap main section.text {
+  display: grid;
+  justify-items: center;
+  margin: 1em;
+  text-align: justify;
+}
+.content-wrap main section.text p {
+  width: 80%;
+}
+
+/* thought process: nav - only one row so no need to specify
+I found a best practices guide in smashing magazine that suggested using the above minmax
+pattern with fr to force equal distribution
+*/
+
+/*# sourceMappingURL=main.css.map */
