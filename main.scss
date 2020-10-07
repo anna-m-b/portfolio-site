@@ -1,3 +1,7 @@
+@import 'style-vars.scss';
+@import 'mixins.scss';
+
+
 /* LAYOUT */
 
 body {
@@ -25,20 +29,21 @@ body {
 //   grid-template: 1fr 1fr 1fr /  1fr 0.3fr 10%;
   
 aside.social-links {
-  margin-top: 1em;
-  min-width: 4em;
+  margin-top: 1rem;
+  min-width: 4rem;
   // grid-area: aside;
   display: grid;
-  grid-template-rows: 3em 3em 3em;
+  grid-template-rows: 3rem 3rem 3rem;
   place-items: center;
-
   position: fixed;
   top: 0;
-  right: 0;
+  right: 10px;
   
 }
 .content-wrap {
   width: 95%;
+  display: grid;
+  place-items: center;
   
 //   display: grid;
 //   grid-template-areas: 
@@ -48,12 +53,13 @@ aside.social-links {
 // }
 header {
   // grid-area: header;
-  width: 90%;
+  width: 80%;
 }
 
 
   nav {
-    // grid-area: nav;
+    background-color: white;
+    width: 100%;
     height: 3em;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -64,10 +70,16 @@ header {
 
   
 
-   h1 {
-     grid-column: 1 / 2;
-     grid-row: 2 / 4;
-     margin-left: 1em;
+   header h1 {
+    //  grid-column: 1 / 2;
+    //  grid-row: 2 / 4;
+     margin: 0 0 0 2rem;
+
+    + p {
+       margin: 0 0 1rem 3rem;
+       font-size: 1.5rem;
+
+     }
    }
  
 
@@ -75,29 +87,43 @@ header {
 main {
   // grid-area: main;
   display: grid;
-  margin: 1em;
+  margin: 1rem;
+  place-items: center;
   
 
   section.main-info {
+
+    width: 90%;
     display: grid;
-    grid-template: 10% 45% 45% / 50% 50%;
+    grid-template-columns: 50% 50%;
     place-items: center;
+
+    h2 {
+      justify-self: start;
+    }
+
+    ul li {
+      list-style-type: square;
+    }
+    
 
     #list-one {
       grid-row: 2 / 3;
       grid-column: 2 / 3;
-      
+      // justify-self: start;
+      margin-bottom: 1rem;
     }
     #img-one {
       grid-row: 2 / 3;
       grid-column: 1 / 2;
       // place-self: end;
-      
     }
   
     #list-two {
        grid-row: 3 / 4;
        grid-column: 1 / 2;
+      //  justify-self: end;
+       margin-top: 1rem;
      
     }
 
@@ -111,20 +137,50 @@ main {
   section.text {
       display: grid;
       justify-items: center;
-      margin: 1em;
+      margin: 1rem;
       text-align: justify;
 
-      p {
+      .paragraphs {
         width: 80%;
+        margin-bottom: 3rem;
       }
   }
 
-}
+ }
 
 }
 
+/* STYLES */
+
+h1 {
+  @include h1-styles;
+}
+
+h2 {
+  @include h2-styles;
+}
+
+p, li {
+  font-family: $paragraph-font;
+}
+
+li {
+  font-size: 0.9rem;
+}
 
 
+nav a {
+  font-family: $paragraph-font;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.paragraphs span {
+  font-family: $title-font;
+  font-size: 1.3rem;
+  letter-spacing: 0.3rem;
+  opacity: 0.8;
+}
 
 
 /* thought process: nav - only one row so no need to specify
