@@ -5,49 +5,39 @@ html {
   scrollbar-width: none; //for firefox
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+
 body {
-  margin: 0 auto;
-  
+  margin: 0;
   // color: #058a5e;
   // color: #FF1654;
   // color: #D64933;
  
 }
 
-::-webkit-scrollbar {
-  width: 0px;
-}
+
 
 * { 
   box-sizing: border-box;
 }
 
-
-
-
-// nav {
-//   grid-column: 1 / 4;
-// }
-/* let's try putting a grid on 'body' and positioningeverything ver that *
-
-/* maybe later, first let's do header approach */
-
-/* will need to adjust header /nav stuff to be able to ahve a sticky nav */
-// header {
-//   width: 100%;
-//   display: grid;
-//   grid-template: 1fr 1fr 1fr /  1fr 0.3fr 10%;
 aside {
   grid-area: aside;
   background-color: white; /*#FFFCE8;*/
-  width: 3rem;
+  border-left: 3px solid #08d993;
+  border-right: 3px solid #08d993;
+  width: 3.5rem;
   margin-right: 2rem;
   height: 100%;
-  z-index: 11;
+  z-index: 8;
   // grid-column: 2/3;
 }
 .social-links {
- margin-top: 1rem; 
+  margin-top: 4.5rem; 
+  margin-right: 3px;
   width: 3rem;
   // background-color: #435060
   // height: 100vh;
@@ -56,9 +46,9 @@ aside {
   grid-template-rows: 3rem 3rem 3rem;
   place-items: center;
   position: sticky;
-  top: 1rem;
+  top: 4.5rem;
   right: 0;
-  z-index: 12;
+  z-index: 9;
 }
    
 
@@ -75,7 +65,7 @@ aside {
   // grid-gap: 2em;
   background-color: #010228;
   // background-color: #02033C;
-  
+}
 //   display: grid;
 //   grid-template-areas: 
 //       "nav nav nav aside"
@@ -88,10 +78,18 @@ aside {
   nav {
     grid-area: nav;
     grid-column-end: 3;
-    background-color: #647790;
+    // background-color: #ff4a47;
+    // background-color: #FF3633;
+    // background-color: #F3663F;
+    background-color: white;
+    border-top: 3px solid #08d993;
+    border-bottom: 3px solid #08d993;
+    // background-color: #FF221F;
+    // background-color: #647790;
     // background-color: #6f829b;
     // background-color: #FF1654;
     margin-top: 1rem;
+    margin-bottom: 1rem;
     // border-bottom: 1px solid black;
     width: 100%;
     height: 3em;
@@ -103,31 +101,74 @@ aside {
     z-index: 10;
 
     a {
+      font-weight: 550;
       color: #010228;
+      letter-spacing: 0.15rem;
+      font-family: $paragraph-font;
+      text-transform: uppercase;
+      text-decoration: none;
+      }
     }
-  }
+  
 
   header {
-    color: #08d993;
+    // color: #08d993;
     // color: #06B178;
     // color: #00FF66;
     // // color: #33FF00;
     // color: #33FF33;
     grid-area: header;
     width: 90%;
-    height: 100vh;
+    // height: 75vh;
+    display: grid;
+    grid-template: 10rem 10rem 1fr /  1fr 1fr 1fr;
+    grid-gap: 20px;
   
      h1 {
+        @include h1-styles;
          margin: 2rem 0 0 2rem;
+         animation-duration: 2s;
+         animation-name: slidein;
+         grid-column: 1 / 4;
+         grid-row: 1 /2;
 
     + p {
         width: 85%;
         margin: 0 0 1rem 3rem;
         @include subheading-styles;
         font-family: $paragraph-font;
+        animation-duration: 2s;
+        animation-name: slidein;
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
      }
     }
+    #portrait {
+      width: 300px;
+      border-radius: 50%;
+      transform: rotate(-5deg);
+      grid-column: 2 / 3;
+      grid-row: 3 /4;
+      // border: 1px solid transparent;
+      box-shadow: 5px 5px 5px #0102289e,
+                  50px 0 0 rgba(255, 255, 255, 0.81);
+      
+
+    }
   }
+
+@keyframes slidein {
+  from {
+    margin-top: -100rem;
+    // width: 1%;
+  }
+
+  to {
+    margin-left: 2rem;
+    width: 85%;
+  }
+}
+
  
 
 
@@ -148,6 +189,7 @@ main {
 
     h2 {
       justify-self: start;
+      @include subheading-styles;
     }
 
     ul li {
@@ -189,79 +231,32 @@ main {
       margin: 1rem;
       text-align: justify;
 
+      h2 {
+        @include subheading-styles;
+      }
+
       .paragraphs {
         width: 80%;
         margin-bottom: 3rem;
+        p {
+            @include p-styles;
+         }
+        span {
+             font-family: $title-font;
+             font-size: 1.3rem;
+             letter-spacing: 0.3rem;
+             opacity: 1;
+             color: white;
+          }
       }
   }
 
  }
 
-}
-
-/* STYLES */
-
-h1 {
-  @include h1-styles;
-}
-
-h2 {
-  @include subheading-styles;
-}
-
-p, li {
-  font-family: $paragraph-font;
-}
-
-li {
-  font-size: 0.9rem;
-}
-
-
-nav a {
-  font-family: $paragraph-font;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-.paragraphs span {
-  font-family: $title-font;
-  font-size: 1.3rem;
-  letter-spacing: 0.3rem;
-  opacity: 0.8;
-}
-
-// p, li {
-//   color: #FFFCE8;
-// }
-
-/* thought process: nav - only one row so no need to specify
-I found a best practices guide in smashing magazine that suggested using the above minmax
-pattern with fr to force equal distribution
-*/
 
 
 
-// nav {
-//   display: grid;
-//   grid-template: 1fr 1fr / repeat(5, 1fr) repeat(4, 0.5fr);
-//   place-items: center;
-  
-// }
 
-// .social-links {
-//   width: 95%;
-//   grid-column: -1 / -2;
-//   display: grid;
-//   grid-template-columns: 1fr 1fr;
-//   // justify-items: center;
-//   // align-items: end; 
-//   place-items: center; /* why doesn't this (and other align attempts) work?"*/
-
-//   a {
-//        padding-top: 10%; /* fix for above problem (align not working) */
-//   }
-// }
 
 
 
