@@ -47,7 +47,7 @@ aside {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 3rem;
-  grid-template-areas: "nav aside" "header aside" "main aside";
+  grid-template-areas: "nav aside" "header aside" "main aside" "main aside";
   place-items: center;
   background-color: #010228;
 }
@@ -142,6 +142,7 @@ header #portrait {
   }
 }
 section.text {
+  grid-area: main;
   display: grid;
   justify-items: center;
   margin: 1rem;
