@@ -86,14 +86,9 @@ a:hover {
 
 header {
   grid-area: header;
-  display: grid;
-  grid-template: 10rem 12rem 1fr/1fr 1fr 1fr;
-  grid-gap: 20px;
   width: 90%;
 }
 header h1 {
-  grid-column: 1/4;
-  grid-row: 1/2;
   margin: 2rem 0 0 2rem;
   color: #08d993;
   font-size: 5rem;
@@ -103,8 +98,6 @@ header h1 {
   animation: fade-in ease 4s;
 }
 header h1 + p {
-  grid-column: 1/4;
-  grid-row: 2/3;
   width: 85%;
   margin: 0 0 1rem 3rem;
   font-size: 2.5rem;
@@ -116,9 +109,9 @@ header h1 + p {
   animation: fade-in ease 6s;
 }
 header #portrait {
-  grid-column: 2/3;
-  grid-row: 3/4;
+  display: block;
   width: 300px;
+  margin: 70px auto;
   border-radius: 50%;
   box-shadow: 5px 5px 5px #0102289e, 30px 0 0 rgba(255, 255, 255, 0.961);
   transform: rotate(-5deg);
@@ -144,10 +137,9 @@ header #portrait {
 }
 article {
   grid-area: article;
-  display: grid;
-  justify-items: center;
-  margin: 1rem;
-  text-align: justify;
+  max-width: 90%;
+  margin: 1rem auto;
+  text-align: center;
   animation: fade-in ease 9s;
 }
 article h2 {
@@ -158,13 +150,15 @@ article h2 {
 }
 article .paragraphs {
   width: 80%;
-  margin-bottom: 3rem;
+  display: block;
+  margin: 0 auto 3rem auto;
 }
 article .paragraphs p {
   font-size: 1.2rem;
   font-family: "Lato", sans-serif;
   letter-spacing: 0.1em;
   color: rgba(255, 255, 255, 0.961);
+  text-align: justify;
 }
 article .paragraphs span {
   font-family: "Pacifico", cursive;
@@ -174,7 +168,7 @@ article .paragraphs span {
 
 @media only screen and (max-width: 700px) {
   .content-wrap {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(auto, 1fr);
     grid-template-areas: "nav" "header" "article";
   }
 
@@ -189,21 +183,22 @@ article .paragraphs span {
     font-size: 0.8rem;
   }
 
-  header {
+  .full-header {
     margin: 0;
     grid-template: auto minmax(0, 1fr) minmax(0, 1fr)/minmax(0, 1fr);
     height: 80vh;
     justify-items: center;
   }
-  header h1 {
+  .full-header h1 {
     margin: 0;
   }
-  header h1 + p {
+  .full-header h1 + p {
     font-size: 1.7rem;
     margin: 0 2px 0 2px;
     grid-row-start: 3;
   }
-  header #portrait {
+
+  #portrait {
     width: 200px;
     grid-column-start: 1;
     grid-row-start: 2;
