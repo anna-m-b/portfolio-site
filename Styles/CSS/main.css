@@ -178,7 +178,7 @@ article .paragraphs span {
     grid-template-areas: "nav" "header" "article";
   }
 
-  sidebar {
+  .sidebar {
     display: none;
   }
 
