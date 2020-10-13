@@ -1,27 +1,22 @@
 @import 'style-vars.scss';
 
 @mixin h1-styles {
-  color: #08d993;
+  color: $accent-color;
   font-size: 5rem;
   font-family: $title-font;
   letter-spacing: 0.15em;
-  
 }
 
 @mixin subheading-styles {
   font-size: 2.5rem;
-  opacity: 0.9;
   font-family: $title-font;
   letter-spacing: 0.1em;
-  color: white;
-  // color: #FFFCE8;
-  
+  color: $font-color;
 }
 
-
 @mixin p-styles {
+  font-size: 1.2rem;
   font-family: $paragraph-font;
   letter-spacing: 0.1em;
-  color: white;
-  opacity: 0.8;
+  color: $font-color;
 }
