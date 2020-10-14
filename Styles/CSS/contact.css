@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+html {
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+body {
+  margin: 0;
+  background-color: #010228;
+}
+
+.title {
+  color: #08d993;
+  font-size: 5rem;
+  font-family: "Pacifico", cursive;
+  letter-spacing: 0.15em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  width: 80%;
+  font-size: 2.5rem;
+}
+
+.subheading {
+  font-size: 2.5rem;
+  font-family: "Lato", sans-serif;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.961);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  width: 80%;
+  font-size: 1.2rem;
+  padding-left: 5rem;
+}
+
+.contact-form {
+  margin-top: 50px;
+}
+
+.form-input, .form-label, .form-button-wrap {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 450px;
+  margin-top: 10px;
+}
+
+.form-input {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  box-shadow: 5px 5px 0 #08d993;
+}
+
+.form-label {
+  font-size: 1.2rem;
+  font-family: "Lato", sans-serif;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.961);
+}
+
+textarea {
+  height: 150px;
+}
+
+.form-button-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.form-button {
+  margin: 15px;
+  padding: 5px;
+  width: 6rem;
+  border: 0px solid #6c6ee1;
+  border-radius: 15px;
+  box-shadow: 4px 2px 5px #f91a6f;
+  font-size: 1rem;
+  color: #010228;
+  background-color: white;
+  font-family: "Lato", sans-serif;
+}
+.form-button:hover {
+  color: #f91a6f;
+}
+
+/*# sourceMappingURL=contact.css.map */

@@ -206,5 +206,10 @@ article .paragraphs span {
     align-self: start;
   }
 }
+.element-to-center {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+}
 
 /*# sourceMappingURL=main.css.map */

@@ -9,7 +9,7 @@
 
 @mixin subheading-styles {
   font-size: 2.5rem;
-  font-family: $title-font;
+  font-family: $paragraph-font;
   letter-spacing: 0.1em;
   color: $font-color;
 }
@@ -20,3 +20,14 @@
   letter-spacing: 0.1em;
   color: $font-color;
 }
+
+@mixin body-styles {
+  margin: 0;
+  background-color: $background-color;
+}
+
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+ } 
