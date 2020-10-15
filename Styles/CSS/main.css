@@ -12,6 +12,7 @@ html {
 
 body {
   margin: 0;
+  background-color: #010228;
 }
 
 .main-text {
@@ -27,7 +28,6 @@ body {
   grid-template-areas: "nav sidebar" "header sidebar" "article sidebar" "article sidebar";
   place-items: center;
   width: 100%;
-  background-color: #010228;
 }
 
 .sidebar {
@@ -101,10 +101,9 @@ header h1 + p {
   width: 85%;
   margin: 0 0 1rem 3rem;
   font-size: 2.5rem;
-  font-family: "Pacifico", cursive;
+  font-family: "Lato", sans-serif;
   letter-spacing: 0.1em;
   color: rgba(255, 255, 255, 0.961);
-  font-family: "Lato", sans-serif;
   animation-duration: 2s;
   animation: fade-in ease 6s;
 }
@@ -144,9 +143,10 @@ article {
 }
 article h2 {
   font-size: 2.5rem;
-  font-family: "Pacifico", cursive;
+  font-family: "Lato", sans-serif;
   letter-spacing: 0.1em;
   color: rgba(255, 255, 255, 0.961);
+  font-family: "Pacifico", cursive;
 }
 article .paragraphs {
   width: 80%;
@@ -205,11 +205,6 @@ article .paragraphs span {
     margin: 0;
     align-self: start;
   }
-}
-.element-to-center {
-  display: block;
-  width: 50%;
-  margin: 0 auto;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -60,6 +60,10 @@ body {
   border: none;
   box-shadow: 5px 5px 0 #08d993;
 }
+.form-input:focus {
+  outline: 0;
+  border: 5px solid #91f7d5;
+}
 
 .form-label {
   font-size: 1.2rem;
@@ -83,7 +87,7 @@ textarea {
   width: 6rem;
   border: 0px solid #6c6ee1;
   border-radius: 15px;
-  box-shadow: 4px 2px 5px #f91a6f;
+  box-shadow: 4px 3px 5px #f91a6f;
   font-size: 1rem;
   color: #010228;
   background-color: white;
@@ -91,6 +95,22 @@ textarea {
 }
 .form-button:hover {
   color: #f91a6f;
+}
+.form-button:focus {
+  outline: 0;
+  color: #f91a6f;
+}
+
+.footnote {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 5rem;
+  font-size: 1.2rem;
+  font-family: "Lato", sans-serif;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.961);
+  font-size: 1rem;
 }
 
 @media only screen and (max-width: 500px) {

@@ -13,25 +13,30 @@
     <h1 class="title">Send me a message</h1>
     <p class="subheading">I'd love to hear from you</p>
 
-    <form class="contact-form">
-      <label class="form-label" for="name">
-        Name
+    <form class="contact-form" id="form">
+      <label class="form-label" for="name" id="name-label">
+        Name*
       </label>
-      <input class="form-input" id="name" type="text" placeholder="Enter your name">
-      <label class="form-label" for="email" > 
-        Email
+      <input class="form-input" id="name" type="text" placeholder="Enter your name" required aria-required='true'>
+      <label class="form-label" for="email" id="email-label"> 
+        Email*
       </label>
-      <input class="form-input" id="email" type="email" placeholder="Enter your email">
-      <label class="form-label" for="message">
-        Message
+      <input class="form-input" id="email" type="email" placeholder="Enter your email" required aria-required='true'>
+      <label class="form-label" for="message" id="message-label">
+        Message*
       </label>
-      <textarea  class="form-input" id="message" placeholder="Enter your message"></textarea>
+      <textarea  class="form-input" id="message" placeholder="Enter your message" required aria-required='true'></textarea>
       <span class="form-button-wrap">
-        <button class="form-button">Submit!</button>
-        <button class="form-button">Clear</button>
+        <button type="submit" class="form-button" id="submit">Send mail!</button>
+        <button class="form-button" id="clear">Clear</button>
      </span>
+     <div class="footnote"><p>*required</p></div>
     </form>
+
     
     <script src="" async defer></script>
   </body>
+
+  <script src="Scripts/contact-form.js"></script>
 </html>
+
