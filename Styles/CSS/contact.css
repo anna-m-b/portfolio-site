@@ -113,6 +113,20 @@ textarea {
   font-size: 1rem;
 }
 
+.hidden {
+  display: none;
+}
+
+.show-helper-text {
+  display: block;
+  color: #f91a6f;
+  font-size: 1rem;
+}
+
+.input-error {
+  border: 2px solid #f91a6f;
+}
+
 @media only screen and (max-width: 500px) {
   html {
     font-size: 11px;

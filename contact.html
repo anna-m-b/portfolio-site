@@ -16,15 +16,18 @@
 
     <form class="contact-form" id="form">
       <label class="form-label" for="name" id="name-label">
-        Name*
+        Name* 
+        <p class="hidden">Please enter your name</p>
       </label>
       <input class="form-input" id="name" type="text" placeholder="Enter your name" required aria-required='true'>
       <label class="form-label" for="email" id="email-label"> 
         Email*
+        <p class="hidden">Please enter a valid email address</p>
       </label>
       <input class="form-input" id="email" type="email" placeholder="Enter your email" required aria-required='true'>
       <label class="form-label" for="message" id="message-label">
         Message*
+        <p class="hidden">Message cannot be blank</p>
       </label>
       <textarea  class="form-input" id="message" placeholder="Enter your message" required aria-required='true'></textarea>
       <span class="form-button-wrap">
