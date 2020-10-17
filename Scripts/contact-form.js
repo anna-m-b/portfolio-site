@@ -2,7 +2,10 @@ const submitBtn = document.getElementById('submit')
 const clearBtn = document.getElementById('clear')
 const form = document.getElementById('form')
 
-document.addEventListener('click', function(event) {
+submitBtn.addEventListener('click', validateForm)
+clearBtn.addEventListener('click', clearForm)
+
+function validateForm(event) {
   event.preventDefault() 
   const name = document.getElementById('name').value 
   const email = document.getElementById('email').value
@@ -11,23 +14,20 @@ document.addEventListener('click', function(event) {
     {id: 'name', value: name}, 
     {id: 'email', value: emailIsValid(email) ? email : ""}, 
     {id: 'message', value: message}]
-
-  if (event.target === submitBtn) {
-    inputs.forEach(removeErrorStyles)
-    const invalidInputs = inputs.filter(input => !input.value)
-    if (invalidInputs.length === 0) {
+  inputs.forEach(removeErrorStyles)
+  const invalidInputs = inputs.filter(input => !input.value)
+  if (invalidInputs.length === 0) {
       alert(`Your message has been sent! ${name}   ${email}   ${message}`)
       form.reset()
-    } else {
+  } else {
       invalidInputs.forEach(errorStyles)
     }
-  }
+}
 
-  if (event.target === clearBtn) {
+function clearForm() {
     form.reset()
     inputs.forEach(removeErrorStyles)
   }
-})
 
 function emailIsValid (email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
