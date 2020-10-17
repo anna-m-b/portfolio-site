@@ -1,29 +1,29 @@
-@import 'style-vars.scss';
+@use 'style-vars.scss' as v;
 
 @mixin h1-styles {
-  color: $accent-color;
+  color: v.$accent-color;
   font-size: 5rem;
-  font-family: $title-font;
+  font-family: v.$title-font;
   letter-spacing: 0.15em;
 }
 
 @mixin subheading-styles {
   font-size: 2.5rem;
-  font-family: $paragraph-font;
+  font-family: v.$paragraph-font;
   letter-spacing: 0.1em;
-  color: $font-color;
+  color: v.$font-color;
 }
 
 @mixin p-styles {
   font-size: 1.2rem;
-  font-family: $paragraph-font;
+  font-family: v.$paragraph-font;
   letter-spacing: 0.1em;
-  color: $font-color;
+  color: v.$font-color;
 }
 
 @mixin body-styles {
   margin: 0;
-  background-color: $background-color;
+  background-color: v.$background-color;
 }
 
 @mixin center-block {
@@ -31,3 +31,18 @@
   margin-left: auto;
   margin-right: auto;
  } 
+
+
+ @mixin about-me-small-screen-layout {
+  .content-wrap {
+    grid-template-columns: minmax(auto, 1fr);
+    grid-template-areas: 
+    "nav"
+    "header"
+    "article";
+  }  
+  
+  .sidebar {
+      display: none;
+    }
+ }

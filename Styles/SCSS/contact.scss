@@ -1,5 +1,8 @@
-@import 'style-vars.scss';
-@import 'mixins.scss';
+@use 'style-vars' as v;
+@use 'mixins' as m;
+@use 'nav-bars' as n;
+
+
 
 html {
   scrollbar-width: none; //for firefox
@@ -10,20 +13,41 @@ html {
 }
 
 body {
-  @include body-styles;  
+  @include m.body-styles;  
+  
+}
+.content-wrap {
+  display: grid;
+  grid-template-columns: 1fr 3rem;
+  grid-template-rows: repeat(4, minmax(auto-fit, 1fr));
+  grid-template-areas: 
+    "nav sidebar"
+    "main sidebar"
+    "main sidebar"
+    ". sidebar";
+}
+
+nav {
+ @include n.nav;
+}
+
+.sidebar {
+  @include n.sidebar;
+  place-self: center;
+  height: 100vh; // this on about me results in a gap at the top, but works on this page. why?
 }
 
 .title {
-  @include h1-styles;
-  @include center-block;
+  @include m.h1-styles;
+  @include m.center-block;
   margin-bottom: 0;
   width: 80%;
   font-size: 2.5rem;
 }
 
 .subheading {
-  @include subheading-styles;
-  @include center-block;
+  @include m.subheading-styles;
+  @include m.center-block;
   margin-top: 0;
   width: 80%;
   font-size: 1.2rem;
@@ -35,7 +59,7 @@ body {
 }
 
  .form-input, .form-label, .form-button-wrap {
- @include center-block;
+ @include m.center-block;
   width: 25rem;
   margin-top: 10px;
 }
@@ -44,7 +68,7 @@ body {
   padding: 10px;
   margin-bottom: 20px;
   border: none;
-  box-shadow: 5px 5px 0 $accent-color;
+  box-shadow: 5px 5px 0 v.$accent-color;
   &:focus {
     outline:0;
     border: 5px solid #91f7d5;
@@ -52,7 +76,7 @@ body {
 }
 
 .form-label {
-  @include p-styles;
+  @include m.p-styles;
 }
 
 
@@ -74,9 +98,9 @@ textarea {
   box-shadow:
              4px 3px 5px #f91a6f;
   font-size: 1rem;
-  color: $background-color;
+  color: v.$background-color;
   background-color: white;
-  font-family: $paragraph-font;
+  font-family: v.$paragraph-font;
   &:hover {
     color: #f91a6f;
   } 
@@ -87,9 +111,9 @@ textarea {
 }
 
 .footnote {
-  @include center-block;
+  @include m.center-block;
   width: 5rem;
-  @include p-styles;
+  @include m.p-styles;
   font-size: 1rem;
 }
 
@@ -109,10 +133,12 @@ textarea {
 
 
 
-
 @media only screen and (max-width: 500px) {
   html {
     font-size: 11px;
+  }
+  .sidebar {
+    display: none;
   }
 }
 
@@ -120,5 +146,24 @@ textarea {
 @media only screen and (max-width: 380px) {
   html {
     font-size: 9px;
+  }
+  .sidebar {
+    display: none;
+  }
+}
+
+
+@media only screen and (max-height: 667px) {
+  html {
+    font-size: 9px;
+  }
+  .sidebar {
+    display: none;
+  }
+  textarea {
+    height: 120px;
+  }
+  .contact-form {
+    margin-top: 20px;
   }
 }
