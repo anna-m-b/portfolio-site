@@ -2,29 +2,21 @@ const submitBtn = document.getElementById('submit')
 const clearBtn = document.getElementById('clear')
 const form = document.getElementById('form')
 
-function emailIsValid (email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-}
-// from https://ui.dev/validate-email-address-javascript/
-
 document.addEventListener('click', function(event) {
   event.preventDefault() 
-  
-  let name = document.getElementById('name').value 
-  let email = document.getElementById('email').value
-  let message = document.getElementById('message').value
+  const name = document.getElementById('name').value 
+  const email = document.getElementById('email').value
+  const message = document.getElementById('message').value
   
   if (event.target === submitBtn) {
-    if (!name) { errorStyles('name') }
-    else if (!email || !emailIsValid(email)) {  errorStyles('email') } 
-    else if (!message) {  errorStyles('message') }
-    else  { 
-      removeAllErrorStyles()
-      setTimeout(() => {
-          alert(`Your message has been sent! ${name}   ${email}   ${message}`)}, 500) 
-      setTimeout(() => { 
-          form.reset()}, 500)    
-    } 
+    removeAllErrorStyles()
+    const problemInputs = validateForm(name, email, message)
+    if (problemInputs.length === 0) {
+      alert(`Your message has been sent! ${name}   ${email}   ${message}`)
+      form.reset()
+    } else {
+      problemInputs.forEach(errorStyles)
+    }
   }
 
   if (event.target === clearBtn) {
@@ -33,13 +25,26 @@ document.addEventListener('click', function(event) {
   }
 })
 
-function errorStyles(id) {
+function emailIsValid (email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}
+// from https://ui.dev/validate-email-address-javascript/
+
+function validateForm(name, email, message) {
+  const problemInputs = [
+    {id: 'name', value: name}, 
+    {id: 'email', value: emailIsValid(email) ? email : ""}, 
+    {id: 'message', value: message}]
+    .filter(input => !input.value)
+    return problemInputs
+}
+
+function errorStyles(input) {
+  const id = input.id
   document.getElementById(id).classList.add('input-error')
   const label = document.getElementById(`${id}-label`)
-  console.log(label, 'label')
   label.childNodes[1].classList.add('show-helper-text')
   } 
-
 
 function removeErrorStyles(id) {
   document.getElementById(id).classList.remove('input-error')
@@ -52,4 +57,6 @@ function removeAllErrorStyles() {
     removeErrorStyles('email')
     removeErrorStyles('message')
 }
+
+
 
