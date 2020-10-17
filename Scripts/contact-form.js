@@ -20,7 +20,7 @@ function validateForm(event) {
       alert(`Your message has been sent! ${name}   ${email}   ${message}`)
       form.reset()
   } else {
-      invalidInputs.forEach(errorStyles)
+      invalidInputs.forEach(addErrorStyles)
     }
 }
 
@@ -34,7 +34,7 @@ function emailIsValid (email) {
 }
 // from https://ui.dev/validate-email-address-javascript/
 
-function errorStyles(input) {
+function addErrorStyles(input) {
   const id = input.id
   document.getElementById(id).classList.add('input-error')
   const label = document.getElementById(`${id}-label`)
