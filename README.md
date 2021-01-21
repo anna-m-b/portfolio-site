@@ -1,5 +1,8 @@
-# portfolio-site
+# A boot camp project: start work on a portfolio website.
 
-The first draft about me page for what will become my portfolio site.
+## Objectives
 
-TO DO - make responsive for mobile screens
+ - [x] Create an about me page using semantic HTML
+ - [x] Make some projects cards 
+ - [x] Create a contact form and handle user input using vanilla JavaScript
+ - [x] Style everything nicely with CSS
