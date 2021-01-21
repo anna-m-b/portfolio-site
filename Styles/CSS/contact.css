@@ -15,9 +15,6 @@ body {
 
 .content-wrap {
   display: grid;
-  grid-template-columns: 1fr 3rem;
-  grid-template-rows: repeat(4, minmax(auto-fit, 1fr));
-  grid-template-areas: "nav sidebar" "main sidebar" "main sidebar" ". sidebar";
 }
 
 nav {
@@ -27,18 +24,17 @@ nav {
   grid-template-columns: repeat(5, 1fr);
   place-items: center;
   width: 100%;
-  height: 3em;
-  margin-top: 1rem;
+  height: 3rem;
+  margin-top: 0rem;
   margin-bottom: 1rem;
-  border-top: 3px solid #08d993;
   border-bottom: 3px solid #08d993;
   z-index: 10;
   position: sticky;
-  top: 1rem;
+  top: 0rem;
   background-color: white;
 }
 nav a {
-  font-weight: 550;
+  font-weight: 570;
   color: #010228;
   letter-spacing: 0.15rem;
   font-family: "Lato", sans-serif;
@@ -49,56 +45,38 @@ nav a:hover {
   color: #08d993;
 }
 
-.sidebar {
-  grid-area: sidebar;
-  z-index: 8;
-  width: 3.5rem;
-  margin-right: 2rem;
-  height: 100%;
-  border-left: 3px solid #08d993;
-  border-right: 3px solid #08d993;
-  background-color: white;
-  place-self: center;
-  height: 100vh;
-}
-.sidebar .social-links {
-  display: grid;
-  grid-template-rows: 3rem 3rem 3rem;
-  place-items: center;
-  z-index: 9;
-  width: 3rem;
-  margin-top: 4.5rem;
-  margin-right: 3px;
-  position: sticky;
-  top: 4.5rem;
-  right: 0;
-}
-
 .title {
   color: #08d993;
-  font-size: 5rem;
-  font-family: "Pacifico", cursive;
-  letter-spacing: 0.15em;
+  font-size: 3rem;
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.6rem;
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0;
   width: 80%;
   font-size: 2.5rem;
+  text-align: center;
 }
 
 .subheading {
-  font-size: 2.5rem;
   font-family: "Lato", sans-serif;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.961);
+  font-size: 2rem;
+  color: #08d993;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 0;
-  width: 80%;
-  font-size: 1.2rem;
-  padding-left: 5rem;
+  margin-top: 1.5rem;
+  width: 100%;
+  font-size: 1.3rem;
+  padding-left: 0rem;
+  text-align: center;
+  color: #f91a6f;
+  text-transform: none;
 }
 
 .contact-form {

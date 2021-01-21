@@ -18,24 +18,12 @@ body {
 }
 .content-wrap {
   display: grid;
-  grid-template-columns: 1fr 3rem;
-  grid-template-rows: repeat(4, minmax(auto-fit, 1fr));
-  grid-template-areas: 
-    "nav sidebar"
-    "main sidebar"
-    "main sidebar"
-    ". sidebar";
 }
 
 nav {
  @include n.nav;
 }
 
-.sidebar {
-  @include n.sidebar;
-  place-self: center;
-  height: 100vh; // this on about me results in a gap at the top, but works on this page. why?
-}
 
 .title {
   @include m.h1-styles;
@@ -43,15 +31,19 @@ nav {
   margin-bottom: 0;
   width: 80%;
   font-size: 2.5rem;
+  text-align: center;
 }
 
 .subheading {
   @include m.subheading-styles;
   @include m.center-block;
-  margin-top: 0;
-  width: 80%;
-  font-size: 1.2rem;
-  padding-left: 5rem;
+  margin-top: 1.5rem;
+  width: 100%;
+  font-size: 1.3rem;
+  padding-left: 0rem;
+  text-align: center;
+  color:#f91a6f;
+  text-transform: none;
 }
 
 .contact-form {

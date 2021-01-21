@@ -2,17 +2,22 @@
 
 @mixin h1-styles {
   color: v.$accent-color;
-  font-size: 5rem;
-  font-family: v.$title-font;
-  letter-spacing: 0.15em;
+  font-size: 3rem;
+  font-family:v.$paragraph-font;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.6rem;
+  // letter-spacing: 0.15em;
 }
 
 @mixin subheading-styles {
-  font-size: 2.5rem;
   font-family: v.$paragraph-font;
-  letter-spacing: 0.1em;
-  color: v.$font-color;
+  font-size: 2rem;
+  color:  v.$accent-color;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
+
 
 @mixin p-styles {
   font-size: 1.2rem;
@@ -35,7 +40,7 @@
 
  @mixin about-me-small-screen-layout {
   .content-wrap {
-    grid-template-columns: minmax(auto, 1fr);
+    // grid-template-columns: minmax(auto, 1fr);
     grid-template-areas: 
     "nav"
     "header"

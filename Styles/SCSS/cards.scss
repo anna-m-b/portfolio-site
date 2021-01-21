@@ -2,78 +2,112 @@
 @use 'mixins' as m;
 @use 'nav-bars' as n;
 
+// html {
+//   scrollbar-width: none; //for firefox
+// }
 
-// @media only screen and (max-width: )
-html {
-  font-size: 10px;
-}
-body {
-  @include m.body-styles;
+// ::-webkit-scrollbar {
+//   width: 0px;
+// }
+
+// // @media only screen and (max-width: )
+// html {
+//   font-size: 12px;
+// }
+// body {
+//   @include m.body-styles;
+// }
+.projects {
+  margin-top: 3rem;
+  .project-heading {
+    color: v.$accent-color;
+  }
 }
 
 .cards-wrapper {
   @include m.center-block;
+  margin-top: 2rem;
   width: 95%;
   display: grid;
-  grid-template-rows: repeat(auto-fill, 90vh);
+  grid-gap: 10px;
+  grid-template-columns: 50% 50%;
   place-items: center;
-  padding-bottom: 2rem;
+  padding-bottom: 2em;
+  font-size: 13px;
 }
 
 .card {
-  width: 310px;
+  width: 270px;
   height: 390px;
-  margin: 1rem 0;
-  background-color: v.$font-color;
-  border-radius: 3%;
-  border: 2px solid v.$accent-color;
+  margin: 1em 0;
+  display: grid;
+  background-color: white;
+  border-radius: 2%;
+  // border: 2px solid v.$accent-color;
+  padding: 5px;
   box-shadow: 
-        1px 1px 1px rgba(8, 217, 147, 1.8), 
-        -1px 2px 2px rgba(8, 217, 147, 2.12),
-        0 -4px 4px rgb(65, 99, 88, 3.16),
-        0 8px 8px rgba(8, 217, 147, 4.20);
-  padding: 1rem;
+        2px 2px 1px rgba(8, 217, 147, 1.8), 
+        -2px -2px 1px rgba(8, 217, 147, 2.12),
+        0 -4px 4px rgba(65, 99, 88, 3.16),
+        0 6px 8px rgba(8, 217, 147, 4.20);
   box-sizing: border-box;
+  // transition: transform ease 1.5s;
+  // &:hover {
+  //   transform: scale(1.1)
+  // }
 
 }
+
+
 
 .card-image {
   display: block;
-  margin: 2rem auto 1rem auto;
+  margin: 1.5em auto;
   width: 80%;
   height: auto;
-  border-radius: 8%;
+}
+
+.card-info {
+  // background-color: v.$accent-color-light;
+  width: 100%;
+  
 }
 
 .card-title, .card-description {
-  margin: 1rem 1.2rem;
+  margin: 1em 1.2em;
 }
 
 .card-title {
-  @include m.h1-styles;
-  font-size: 1.8rem;
+  display: inline;
+  width: 100%;
+  @include m.p-styles;
+  color: v.$background-color;
+  font-size: 1.6em;
   text-align: center;
-  letter-spacing: 0.4rem;
+  background: linear-gradient(180deg,rgba(255,255,255,0) 65%, v.$accent-color-light 40%);
 }
 
 .card-description {
   @include m.p-styles;
   color: v.$background-color;
   text-align: justify;
-  font-size: 1rem;
-  letter-spacing: 0.05rem;
+  font-size: 1em;
+  letter-spacing: 0.05em;
 }
 
 .card-links-wrap {
-  @include m.center-block;
+  align-self: end;
+  margin-bottom: 2em;
   text-align: center;
+  border-radius: 0% 0% 5% 5%;
 }
 
 .card-links {
   font-family: v.$paragraph-font;
-  color: v.$background-color;
-  margin: 1rem;
-  &:hover {
+  font-size: 1.2em;
+  color: v.$accent-pink;
+  margin: 0 1.5em;
+  &:active {
     color: v.$accent-color;
   }
 }
